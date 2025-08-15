@@ -15,4 +15,4 @@ Comments are provided throughout ECEF_Vector_Estimation.py that showcase my thou
 ## How To Use It Yourself
 1. Clone this repository.
 2. Replace the data in *ephemeris.csv* with your data.
-3. Run *ECEF_Vector_Estimator.py*
+3. Run *ECEF_Vector_Estimation.py*
