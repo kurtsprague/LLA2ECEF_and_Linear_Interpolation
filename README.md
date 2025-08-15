@@ -14,5 +14,15 @@ Comments are provided throughout ECEF_Vector_Estimation.py that showcase my thou
 
 ## How To Use It Yourself
 1. Clone this repository.
-2. Replace the data in *ephemeris.csv* with your data.
-3. Run *ECEF_Vector_Estimation.py*
+2. Make sure you have numpy. If you don't then use: *pip install numpy*
+3. Replace the data in *ephemeris.csv* with your data.
+4. Run *ECEF_Vector_Estimation.py*
+
+## Default Example (Make Sure It Works After Pulling)
+If you run *ECEF_Vector_Estimation.py*, and provide it with time 1700000340, you should get the following console output:
+"""
+Enter the time, in seconds since the Unix epoch, you wish to receive an ECEF velocity vector for.
+1700000340
+ECEF Velocity Vector at time: 1700000340.0
+[-3145.555811346912, 200.39658667631448, -7011.372965759505]
+"""
