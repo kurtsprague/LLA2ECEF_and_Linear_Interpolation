@@ -10,7 +10,7 @@ There are some changes we need to make to the variable before computation
 
 Game plan:
 -Correct incoming data
--Lay out the params from the PDF
+-Lay out the params from WGS84
 -Compute X Y Z
 -Return in a dictionary for quick reference later on
 """
@@ -22,14 +22,14 @@ def lla_to_ecef(lat,long,alt):
     lat = numpy.deg2rad(lat)
     long = numpy.deg2rad(long)
 
-    # WGS84 Parameters from Section 1 of LLAtoECEF.pdf
+    # WGS84 Parameters
     a = 6378137.0
     f = 1/298.257223563
     b = a*(1.0-f)
     e = numpy.sqrt((numpy.square(a) - numpy.square(b))/(numpy.square(a)))
     e2 = numpy.sqrt((numpy.square(a) - numpy.square(b))/(numpy.square(b))) # Appears to not be needed
 
-    # X Y Z computation from Section 2.1 of LLAtoECEF.pdf
+    # X Y Z computation 
 
     N = a/(numpy.sqrt(1-((numpy.square(e)) * numpy.square(numpy.sin(lat)))))
 
@@ -145,4 +145,5 @@ if __name__ == "__main__":
 
     output = calculate_ecef_velocity(coordinates, nearest_time1, nearest_time2)
     print(f"ECEF Velocity Vector at time: {input}")
+
     print(output)
